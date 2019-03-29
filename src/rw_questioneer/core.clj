@@ -28,12 +28,24 @@
       (println "Intercepted message: " message)
       (t/send-text token id "I don't do a whole lot ... yet."))))
 
+(defn splash []
+  {:status 200
+   :headers {"Content-Type" "text/plain"}
+   :body "Hello from Heroku"})
+
+(defroutes app
+  (GET "/" []
+       (splash))
+  (ANY "*" []
+       (route/not-found (slurp (io/resource "404.html")))))
 
 (defn -main
   [& args]
   (when (str/blank? token)
-    (println "Please provde token in TELEGRAM_TOKEN environment variable!")
-    (System/exit 1))
+    (println "Please provde token in TELEGRAM_TOKEN environment variable!"))
+
+  (let [port (Integer. (or port (env :port) 5000))]
+    (jetty/run-jetty (site #'app) {:port port :join? false}))
 
   (println "Starting the rw_questioneer")
   (<!! (p/start token handler)))

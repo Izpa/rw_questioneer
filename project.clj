@@ -7,7 +7,9 @@
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [environ             "1.1.0"]
-                 [morse               "0.2.4"]]
+                 [morse               "0.2.4"]
+                 [compojure "1.4.0"]
+                 [ring/ring-jetty-adapter "1.4.0"]]
 
   :plugins [[lein-environ "1.1.0"]]
 
