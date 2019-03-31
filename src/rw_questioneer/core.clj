@@ -12,9 +12,8 @@
             [morse.api :as t])
   (:gen-class))
 
-; TODO: fill correct token
-(def token (env :telegram-token))
 
+(def token (env :telegram-token))
 
 (h/defhandler handler
 
