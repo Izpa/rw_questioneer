@@ -44,8 +44,7 @@
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 
-(defn -main
-  [& args]
+(defn -main [& [port]]
   (when (str/blank? token)
     (println "Please provde token in TELEGRAM_TOKEN environment variable!"))
 
