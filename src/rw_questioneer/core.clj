@@ -1,5 +1,10 @@
 (ns rw-questioneer.core
-  (:require [clojure.core.async :refer [<!!]]
+  (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
+            [compojure.handler :refer [site]]
+            [compojure.route :as route]
+            [clojure.java.io :as io]
+            [ring.adapter.jetty :as jetty]
+            [clojure.core.async :refer [<!!]]
             [clojure.string :as str]
             [environ.core :refer [env]]
             [morse.handlers :as h]
