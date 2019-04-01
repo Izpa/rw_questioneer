@@ -14,7 +14,7 @@
 (defroutes app
   (GET "/" []
        (splash))
-  (POST s/telegram-handler-uri body
+  (POST s/telegram-handler-uri {body :body}
         ;;(map bot/handler updates))
         (println (str body))
         (splash))
