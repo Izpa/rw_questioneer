@@ -22,6 +22,5 @@
   (GET "/" []
        (splash))
   (POST s/telegram-handler-uri request (telegram-handler request))
- 
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
