@@ -5,7 +5,7 @@
             [environ.core :refer [env]]
             [rw-questioneer.settings :as s]))
 
-(api/set-webhook s/telegram-token (str s/protocol ":// " s/domain "/telegram_handler"))
+(api/set-webhook s/telegram-token (str s/protocol ":// " s/domain s/telegram-handler-uri))
 
 (h/defhandler handler
 
