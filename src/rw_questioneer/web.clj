@@ -14,8 +14,8 @@
 (defroutes app
   (GET "/" []
        (splash))
-  (POST s/telegram-handler-uri {{updates :result} :body}
+  (POST s/telegram-handler-uri body
         ;;(map bot/handler updates))
-        (println updates))
+        (println (str body)))
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
