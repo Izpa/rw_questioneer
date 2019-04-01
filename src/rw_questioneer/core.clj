@@ -10,7 +10,7 @@
             [rw-questioneer.settings :as s]))
 
 (def app
-  (-> (handler/site web/app)
+  (-> (site web/app)
       (middleware/wrap-json-body {:keywords? true})
       middleware/wrap-json-response))
 
