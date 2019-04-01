@@ -2,7 +2,8 @@
   (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
             [compojure.route :as route]
             [clojure.java.io :as io])
-  (:gen-class))
+  ;;(:gen-class)
+  )
 
 
 (defn splash []

@@ -3,7 +3,8 @@
             [morse.handlers :as h]
             [morse.api :as t]
             [environ.core :refer [env]])
-    (:gen-class))
+  ;;(:gen-class)
+  )
 
 (def token (env :telegram-token))
 
