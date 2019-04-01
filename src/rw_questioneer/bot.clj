@@ -1,16 +1,11 @@
 (ns rw-questioneer.bot
-  (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
-            [compojure.handler :refer [site]]
-            [compojure.route :as route]
-            [clojure.java.io :as io]
-            [ring.adapter.jetty :as jetty]
-            [clojure.core.async :refer [<!!]]
-            [clojure.string :as str]
+  (:require [clojure.string :as str]
             [morse.handlers :as h]
-            [morse.polling :as p]
-            [morse.api :as t])
+            [morse.api :as t]
+            [environ.core :refer [env]])
     (:gen-class))
 
+(def token (env :telegram-token))
 
 (h/defhandler handler
 

@@ -7,8 +7,6 @@
             [rw-questioneer.web :as web])
   (:gen-class))
 
-(def token (env :telegram-token))
-
 (defn -main [& [port]]
   ;;(when (str/blank? token)
   ;;  (println "Please provde token in TELEGRAM_TOKEN environment variable!"))
@@ -17,4 +15,4 @@
     (jetty/run-jetty (site #'web/app) {:port port :join? false}))
 
   (println "Starting the rw_questioneer")
-  (<!! (p/start token bot/handler)))
+  (<!! (p/start bot/token bot/handler)))
