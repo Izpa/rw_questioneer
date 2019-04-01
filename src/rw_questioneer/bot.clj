@@ -7,7 +7,7 @@
             [clj-http.client :as http]))
 
 
-(def webhook-url (str "https:// " s/domain s/telegram-handler-uri))
+(def webhook-url (str "https://" s/domain s/telegram-handler-uri))
 
 (api/set-webhook s/telegram-token webhook-url)
 
