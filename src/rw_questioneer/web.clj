@@ -11,6 +11,9 @@
    :headers {"Content-Type" "text/plain"}
    :body "Hello from Heroku"})
 
+(println "azazazaza")
+(println s/telegram-handler-uri)
+
 (defroutes app
   (GET "/" []
        (splash))
