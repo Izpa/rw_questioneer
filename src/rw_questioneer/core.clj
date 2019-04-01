@@ -5,8 +5,7 @@
             [morse.polling :as p]
             [rw-questioneer.bot :as bot]
             [rw-questioneer.web :as web])
-  ;;(:gen-class)
-  )
+  (:gen-class))
 
 (defn -main [& [port]]
   ;;(when (str/blank? token)
