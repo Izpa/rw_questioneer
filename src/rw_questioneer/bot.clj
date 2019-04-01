@@ -12,6 +12,5 @@
 (api/set-webhook s/telegram-token webhook-url)
 
 (h/defhandler handler
-  (h/command "help" {{id :id} :chat}
-             (println "azazazaza")
-             (api/send-text s/telegram-token id "Help is on the way")))
+  (h/command "help" message
+             (api/send-text s/telegram-token (:id (:chat message)) message)))
