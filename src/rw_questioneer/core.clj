@@ -3,6 +3,7 @@
             [clojure.core.async :refer [<!!]]
             [environ.core :refer [env]]
             [morse.polling :as p]
+            [ring.adapter.jetty :as jetty]
             [rw-questioneer.bot :as bot]
             [rw-questioneer.web :as web])
  ;; (:gen-class)
