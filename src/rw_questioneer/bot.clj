@@ -17,8 +17,8 @@
         query {:url webhook-url}]
     (http/post url {:as :json :query-params query})))
 
-(set-webhook s/telegram-token webhook-url)
-;;(api/set-webhook s/telegram-token webhook-url)
+;;(set-webhook s/telegram-token webhook-url)
+(api/set-webhook s/telegram-token webhook-url)
 
 (h/defhandler handler
 
