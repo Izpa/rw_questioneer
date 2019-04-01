@@ -1,10 +1,7 @@
 (ns rw-questioneer.bot
-  (:require [clojure.string :as str]
-            [morse.handlers :as h]
+  (:require [morse.handlers :as h]
             [morse.api :as api]
-            [environ.core :refer [env]]
-            [rw-questioneer.settings :as s]
-            [clj-http.client :as http]))
+            [rw-questioneer.settings :as s]))
 
 
 (def webhook-url (str "https://" s/domain s/telegram-handler-uri))
@@ -13,4 +10,10 @@
 
 (h/defhandler handler
   (h/command "help" message
-             (api/send-text s/telegram-token (:id (:chat message)) message)))
+             (api/send-text s/telegram-token (:id (:chat message)) message))
+  (h/command "id" {{user-id :id} :from {chat-id :id} :chat}
+             (api/send-text s/telegram-token chat-id user-id))
+  (h/message {{first-name :first_name last-name :last_name user-name :user_name} :from text :test}
+             (when (not-empty s/redirect-telegram-id)
+               (api/send-text s/telegram-token s/redirect-telegram-id
+                              (str first-name " " last-name " (" user-name ") спрашивает: " text)))))
