@@ -5,7 +5,8 @@
             [morse.polling :as p]
             [ring.adapter.jetty :as jetty]
             [rw-questioneer.bot :as bot]
-            [rw-questioneer.web :as web]))
+            [rw-questioneer.web :as web]
+            [rw-questioneer.settings: :as s]))
 
 (defn -main [& [port]]
   ;;(when (str/blank? token)
@@ -15,4 +16,5 @@
     (jetty/run-jetty (site #'web/app) {:port port :join? false}))
 
   (println "Starting the rw_questioneer")
-  (<!! (p/start bot/token bot/handler)))
+  ;;(<!! (p/start s/token bot/handler))
+  )
