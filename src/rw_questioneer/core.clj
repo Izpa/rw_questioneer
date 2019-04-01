@@ -6,7 +6,7 @@
             [ring.adapter.jetty :as jetty]
             [rw-questioneer.bot :as bot]
             [rw-questioneer.web :as web]
-            [rw-questioneer.settings: :as s]))
+            [rw-questioneer.settings :as s]))
 
 (defn -main [& [port]]
   ;;(when (str/blank? token)
