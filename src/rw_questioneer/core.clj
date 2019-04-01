@@ -5,9 +5,7 @@
             [morse.polling :as p]
             [ring.adapter.jetty :as jetty]
             [rw-questioneer.bot :as bot]
-            [rw-questioneer.web :as web])
- ;; (:gen-class)
-  )
+            [rw-questioneer.web :as web]))
 
 (defn -main [& [port]]
   ;;(when (str/blank? token)

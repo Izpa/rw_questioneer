@@ -2,9 +2,7 @@
   (:require [clojure.string :as str]
             [morse.handlers :as h]
             [morse.api :as t]
-            [environ.core :refer [env]])
-  ;;(:gen-class)
-  )
+            [environ.core :refer [env]]))
 
 (def token (env :telegram-token))
 
