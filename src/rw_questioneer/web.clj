@@ -16,6 +16,7 @@
        (splash))
   (POST s/telegram-handler-uri body
         ;;(map bot/handler updates))
-        (println (str body)))
+        (println (str body))
+        (splash))
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
