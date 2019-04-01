@@ -7,8 +7,8 @@
             [clj-http.client :as http]))
 
 (def base-url "https://api.telegram.org/bot")
-(def webhook-url (str s/protocol ":// " s/domain s/telegram-handler-uri))
-;;(def webhook-url "http://dev.questioneer.rw.izpa.xyz/telegram_handler")
+;;(def webhook-url (str "https:// " s/domain s/telegram-handler-uri))
+(def webhook-url "https://dev.questioneer.rw.izpa.xyz/telegram-handler")
 
 (defn set-webhook
   "Register WebHook to receive updates from chats"
@@ -18,6 +18,7 @@
     (http/post url {:as :json :query-params query})))
 
 (set-webhook s/telegram-token webhook-url)
+;;(api/set-webhook s/telegram-token webhook-url)
 
 (h/defhandler handler
 
