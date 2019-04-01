@@ -9,9 +9,6 @@
             [rw-questioneer.settings :as s]))
 
 (defn -main [& [port]]
-  ;;(when (str/blank? token)
-  ;;  (println "Please provde token in TELEGRAM_TOKEN environment variable!"))
-
   (let [port (Integer. (or port (env :port) 5000))]
     (jetty/run-jetty (site #'web/app) {:port port :join? false}))
 
