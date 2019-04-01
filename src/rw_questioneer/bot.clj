@@ -25,14 +25,14 @@
   (h/command-fn "start"
                 (fn [{{id :id :as chat} :chat}]
                   (println "Bot joined new chat: " chat)
-                  (api/send-text token id "Welcome to rw_questioneer!")))
+                  (api/send-text s/telegram-token id "Welcome to rw_questioneer!")))
 
   (h/command-fn "help"
                 (fn [{{id :id :as chat} :chat}]
                   (println "Help was requested in " chat)
-                  (api/send-text token id "Help is on the way")))
+                  (api/send-text s/telegram-token id "Help is on the way")))
 
   (h/message-fn
    (fn [{{id :id} :chat :as message}]
      (println "Intercepted message: " message)
-     (api/send-text s/token id "I don't do a whole lot ... yet."))))
+     (api/send-text s/telegram-token id "I don't do a whole lot ... yet."))))
