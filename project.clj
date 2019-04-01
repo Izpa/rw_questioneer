@@ -15,5 +15,6 @@
 
   ;;:main rw_questioneer.core
   ;;:target-path "target/%s"
+  :min-lein-version "2.0.0"
   :uberjar-name "rw-questioneer.jar"
   :profiles {:uberjar {:aot :all}})
