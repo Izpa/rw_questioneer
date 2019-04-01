@@ -13,4 +13,4 @@
 
 (h/defhandler handler
   (h/command "help" {{id :id} :chat}
-           (api/send-text token id "Help is on the way")))
+           (api/send-text s/telegram-token id "Help is on the way")))
