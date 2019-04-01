@@ -13,7 +13,7 @@
 
   :plugins [[lein-environ "1.1.0"]]
 
-  :main rw_questioneer.core
-  :target-path "target/%s"
-  :uberjar-name "rw_questioneer.jar"
+  ;;:main rw_questioneer.core
+  ;;:target-path "target/%s"
+  :uberjar-name "rw-questioneer.jar"
   :profiles {:uberjar {:aot :all}})
