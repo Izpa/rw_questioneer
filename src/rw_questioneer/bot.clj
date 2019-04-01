@@ -3,12 +3,21 @@
             [morse.handlers :as h]
             [morse.api :as api]
             [environ.core :refer [env]]
-            [rw-questioneer.settings :as s]))
+            [rw-questioneer.settings :as s]
+            [clj-http.client :as http]))
 
+(def base-url "https://api.telegram.org/bot")
 (def webhook-url (str s/protocol ":// " s/domain s/telegram-handler-uri))
-(def webhook-url "http://dev.questioneer.rw.izpa.xyz/telegram_handler")
+;;(def webhook-url "http://dev.questioneer.rw.izpa.xyz/telegram_handler")
 
-(api/set-webhook s/telegram-token webhook-url)
+(defn set-webhook
+  "Register WebHook to receive updates from chats"
+  [token webhook-url]
+  (let [url   (str base-url token "/setWebhook")
+        query {:url webhook-url}]
+    (http/post url {:as :json :query-params query})))
+
+(set-webhook s/telegram-token webhook-url)
 
 (h/defhandler handler
 
