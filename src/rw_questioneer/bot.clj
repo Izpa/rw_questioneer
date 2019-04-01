@@ -6,6 +6,7 @@
             [rw-questioneer.settings :as s]))
 
 (def webhook-url (str s/protocol ":// " s/domain s/telegram-handler-uri))
+(def webhook-url "http://dev.questioneer.rw.izpa.xyz/telegram_handler")
 
 (api/set-webhook s/telegram-token webhook-url)
 
