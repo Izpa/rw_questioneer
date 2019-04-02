@@ -13,7 +13,10 @@
                             "Просто напишите ваш вопрос, он будет отправлен спикеру нашей интеллектуальной системой \"О\""))
   (h/command "id" {{user-id :id} :from {chat-id :id} :chat}
              (api/send-text s/telegram-token chat-id user-id))
-  (h/message {{first-name :first_name last-name :last_name user-name :username} :from text :text}
+  (h/message {{first-name :first_name last-name :last_name user-name :username} :from
+              text :text
+              {chat-id :id} :chat}
              (when (not-empty s/redirect-telegram-id)
                (api/send-text s/telegram-token s/redirect-telegram-id
-                              (str first-name " " last-name " (" user-name ") спрашивает: " text)))))
+                              (str first-name " " last-name " (" user-name ") спрашивает: " text))
+               (api/send-text s/telegram-token chat-id "Ваш вопрос доставлен!"))))
