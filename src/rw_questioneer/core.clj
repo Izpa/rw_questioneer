@@ -3,7 +3,6 @@
             [ring.middleware.json :as middleware]
             [clojure.core.async :refer [<!!]]
             [environ.core :refer [env]]
-            [morse.polling :as p]
             [ring.adapter.jetty :as jetty]
             [rw-questioneer.bot :as bot]
             [rw-questioneer.web :as web]
@@ -15,6 +14,7 @@
       middleware/wrap-json-response))
 
 (defn -main [& [port]]
+  (bot/set-webhook)
   (let [port (Integer. (or port (env :port) 5000))]
     (jetty/run-jetty app {:port port :join? false}))
 
