@@ -10,7 +10,7 @@
 (h/defhandler handler
   (h/command "help" {{chat-id :id} :chat}
              (api/send-text s/telegram-token chat-id
-                            "Просто напишите ваш вопрос, он будет отправлен спикеру нашей интеллектуальной системой \"О\""))
+                            "Просто напишите ваш вопрос, он будет отправлен спикеру с помощью специальной интеллектуальной системы \"Oxn\""))
   (h/command "id" {{user-id :id} :from {chat-id :id} :chat}
              (api/send-text s/telegram-token chat-id user-id))
   (h/message {{first-name :first_name last-name :last_name user-name :username} :from
