@@ -24,4 +24,4 @@
   :migratus {:store :database
              :migration-dir "migrations/"
              :migration-table-name "migratus"
-             :db ~(get (System/getenv) "DB_URL")})
+             :db ~(get (System/getenv) "DATABASE_URL")})
