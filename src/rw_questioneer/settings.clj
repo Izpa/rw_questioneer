@@ -14,4 +14,5 @@
          ;schema initialization in a transaction
          ;:init-in-transaction? false
          :migration-table-name "migratus"
-         :db {:connection-uri (env :database-url)}})
+         :db {:connection-uri (env :database-url)
+              :classname "org.postgresql.Driver"}})
