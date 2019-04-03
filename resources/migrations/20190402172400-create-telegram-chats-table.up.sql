@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS telegram_chats
-(id INTEGER SERIAL PRIMARY KEY,
+(id SERIAL PRIMARY KEY,
 telegram_id INTEGER,
 first_name VARCHAR(100),
 last_name VARCHAR(100),
