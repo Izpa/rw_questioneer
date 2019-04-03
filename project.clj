@@ -22,5 +22,6 @@
   :uberjar-name "rw-questioneer.jar"
   :profiles {:uberjar {:aot :all}}
   :migratus {:store :database
-             :migration-dir "migrations"
+             :migration-dir "migrations/"
+             :migration-table-name "migratus"
              :db ~(get (System/getenv) "DB_URL")})
