@@ -15,4 +15,4 @@
        (splash))
   (POST s/telegram-handler-uri {body :body} (bot/handler body))
   (ANY "*" []
-       (route/not-found (slurp (io/resource "404.html")))))
+       (route/not-found (slurp (io/resource "html/404.html")))))
