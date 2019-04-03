@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS telegram_incoming_messages
-(id INTEGER PRIMARY KEY AUTO_INCREMENT,
+(id INTEGER SERIAL PRIMARY KEY,
 telegram_id INTEGER,
 message_text TEXT,
 chat_id INTEGER REFERENCES telegram_chats(id),
