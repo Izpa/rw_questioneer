@@ -15,7 +15,7 @@
       middleware/wrap-json-response))
 
 (defn -main [& [port]]
-  (migratus/migrate s/db)
+  ;(migratus/migrate s/db)
   (bot/set-webhook)
   (let [port (Integer. (or port (env :port) 5000))]
     (jetty/run-jetty app {:port port :join? false}))
