@@ -3,6 +3,7 @@
 
 (def telegram-token (env :telegram-token))
 (def domain (env :domain))
+(def port (env :port))
 (def redirect-telegram-id (env :redirect-telegram-id))
 
 (def telegram-handler-uri "/telegram-handler")
