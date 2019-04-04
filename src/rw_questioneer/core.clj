@@ -16,7 +16,7 @@
   (cond
     (some #{"release"} args)
     (do
-      (migratus/migrate s/db)
+      ;(migratus/migrate s/db)
       (bot/set-webhook)
       (System/exit 0))
     :else
